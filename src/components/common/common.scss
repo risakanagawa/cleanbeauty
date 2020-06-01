@@ -1,0 +1,332 @@
+@import "../../index.scss";
+
+// HEADER STYLING//
+.header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 9999;
+  &__body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    &--title {
+      display: flex;
+      align-items: center;
+      h2 {
+        font-size: 2rem;
+      }
+      img {
+        height: 50px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .navigation {
+    &__main {
+      margin: 0;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 50vw;
+      padding: 0;
+      li {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        &::after {
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          content: "";
+          width: 100%;
+          height: 2px;
+          opacity: 0;
+          transition: 0.3s;
+          background: #3caea3;
+        }
+        &:hover:after {
+          opacity: 1;
+        }
+      }
+    }
+    &__product {
+      &:hover {
+        .navigation__product--link {
+          display: block;
+          transition: all 0.5 ease-in;
+        }
+      }
+      input {
+        display: none;
+      }
+      &--link {
+        display: none;
+        position: absolute;
+        left: -10%;
+        padding: 0;
+        width: 110px;
+        transition: all 0.2s ease-in-out;
+        background: rgba(238, 253, 249, 0.8);
+        z-index: 100;
+        li {
+          font-size: 0.8rem;
+          margin-right: 0;
+          padding: 20px 5px;
+          width: 100%;
+          text-align: center;
+          box-sizing: border-box;
+          &::before {
+            opacity: 0;
+            position: absolute;
+            top: 45%;
+            left: 0.3em;
+            content: "";
+            width: 5px;
+            height: 5px;
+            border: 1px solid;
+            border-color: #565656 #565656 transparent transparent;
+            transform: rotate(45deg);
+            transition: all 0.2s;
+          }
+          &::after {
+            display: none;
+          }
+          &:hover {
+            background: rgba(238, 253, 249, 0.8);
+            &::before {
+              opacity: 1;
+              left: 0.6em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    //hamburger menu
+    .btn-trigger {
+      position: relative;
+      width: 40px;
+      height: 34px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+    .btn-trigger span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $accent-color;
+      border-radius: 4px;
+    }
+    .btn-trigger,
+    .btn-trigger span {
+      display: inline-block;
+      transition: all 0.5s;
+      box-sizing: border-box;
+    }
+    .btn-trigger span:nth-of-type(1) {
+      top: 0;
+    }
+    .btn-trigger span:nth-of-type(2) {
+      top: 17px;
+    }
+    .btn-trigger span:nth-of-type(3) {
+      bottom: 0;
+    }
+
+    #btn01.active span:nth-of-type(1) {
+      -webkit-transform: translateY(16px) rotate(45deg);
+      transform: translateY(16px) rotate(45deg);
+    }
+    #btn01.active span:nth-of-type(2) {
+      opacity: 0;
+    }
+    #btn01.active span:nth-of-type(3) {
+      -webkit-transform: translateY(-16px) rotate(-45deg);
+      transform: translateY(-16px) rotate(-45deg);
+    }
+  }
+}
+
+// FOOTER STYLING//
+.footer {
+  background: #e6e6e6;
+  text-align: center;
+  padding: 10px;
+  font-weight: lighter;
+  .company-info {
+    li {
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 30px;
+    }
+  }
+  .company-name {
+    padding: 10px;
+  }
+  .right {
+    font-size: 0.8rem;
+  }
+
+  .email-box {
+    p {
+      margin: 0;
+    }
+    input {
+      padding: 5px 10px;
+      border: 1px solid #444444;
+      width: 40%;
+    }
+    button {
+      margin: 10px;
+      padding: 5px 10px;
+      background: none;
+      border: 1px solid;
+    }
+  }
+}
+
+//media query
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__AD {
+      h2 {
+        font-size: 0.7rem;
+        font-weight: lighter;
+      }
+    }
+    &__body {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding: 10px;
+      height: 50px;
+      &--title {
+        img {
+          height: 20px;
+        }
+        a h2 {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .navigation {
+      top: 0px;
+      left: 0px;
+      position: fixed;
+      width: 50%;
+      height: 100%;
+      z-index: 1000;
+      transition: all 0.5s;
+      transform: translate(-100%);
+      background: rgba(255, 255, 233, 0.8);
+      &__main {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 110px;
+        padding: 15px;
+        align-items: center;
+        li {
+          &:hover:after {
+            opacity: 0;
+          }
+        }
+      }
+      &__product {
+        label {
+          cursor: pointer;
+        }
+        &--link {
+          display: block;
+          height: 0;
+          padding: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: 0.8s;
+          position: relative;
+          left: 0;
+          background: transparent;
+          li:hover {
+            background: transparent;
+          }
+        }
+        input:checked ~ .navigation__product--link {
+          padding: 10px 0;
+          height: auto;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .active {
+    transform: translate(0) !important;
+  }
+
+  //Footer
+  .footer {
+    .company-info {
+      ul {
+        margin: 30px 0;
+      }
+      li {
+        display: block;
+      }
+      .sns-icons {
+        li {
+          display: inline-block;
+          svg {
+            width: 1.5rem;
+          }
+        }
+      }
+    }
+    .email-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 140px;
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+      }
+    }
+    p {
+      font-size: 0.8rem;
+      margin: 0;
+    }
+  }
+}
+
+//Promotion
+
+.header__AD {
+  height: 40px;
+  background: $accent-color-transparent;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--heading {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    &__AD {
+      h2 {
+        font-size: 0.7rem;
+        font-weight: lighter;
+      }
+    }
+  }
+}

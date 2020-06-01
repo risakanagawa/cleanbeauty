@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import ScrollToTop from "./ScrollToTop";
+import Main from "./components/main/Main";
+import Nav from "./components/common/Nav";
+import NavPromotion from "./components/common/Nav_Promotion";
+import Footer from "./components/common/Footer";
+import Concept from "./components/concept/Concept";
+import FindUs from "./components/findus/FindUs";
+import News from "./components/news/News";
+import ShopAll from "./components/shop/ShopAll";
+import InCart from "./components/shoppingCart/InCart"
+
+library.add(fab, fas);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ScrollToTop>
+        <div>
+          <NavPromotion />
+          <Nav />
+          <Switch>
+            <Route path="/news" component={News} />
+            <Route path="/concept" component={Concept} />
+            <Route path="/findus" component={FindUs} />
+            <Route path="/shop" component={ShopAll} />
+            <Route exact path="/shoppingcart" component={InCart} />
+
+            <Route exact path="/" component={Main} />
+          </Switch>
+
+          <Footer />
+        </div>
+      </ScrollToTop>
+    </Router>
   );
 }
 

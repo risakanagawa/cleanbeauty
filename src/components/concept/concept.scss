@@ -1,0 +1,100 @@
+.concept-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 95%;
+  padding-bottom: 45px;
+  .concept-box {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    height: auto;
+    &:nth-child(2) {
+      flex-direction: row-reverse;
+    }
+    .split {
+      width: 50%;
+    }
+  }
+
+  .conceptImg-box {
+    height: 600px;
+    width: 500px;
+    background-size: contain;
+    &.concept1 {
+      background: url("../../img/concept-1.jpg") no-repeat center;
+    }
+    &.concept2 {
+      background: url("../../img/concept-3.jpg") no-repeat center;
+    }
+    &.concept3 {
+      background: url("../../img/concept-2.jpg") no-repeat center;
+    }
+  }
+  .concept-text {
+    padding: 30px;
+    h2 {
+      font-weight: lighter;
+      font-size: 3rem;
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .concept-box {
+      flex-direction: column;
+      height: auto;
+      &:nth-child(2) {
+        flex-direction: column;
+      }
+      .split {
+        width: 100%;
+      }
+      .conceptImg-box {
+        height: 50vh;
+      }
+      .concept-text {
+        padding: 10px;
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.thanks {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul li{
+    list-style: none;
+    a {
+      color: #000;
+    }
+  }
+}
+
+// FADE_IN ANIMATION
+.hidden {
+  opacity: 0;
+}
+
+.effect-fade {
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

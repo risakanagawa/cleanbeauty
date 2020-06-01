@@ -1,0 +1,106 @@
+@import "../../index.scss";
+
+.products {
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  &__nav {
+    align-self: flex-start;
+    flex-grow: 3;
+    margin-top: 2rem;
+    ul {
+      list-style-type: none;
+    }
+    li {
+      padding: 10px;
+    }
+    .last-li {
+      margin-top: 20px;
+    }
+
+    a.active {
+      text-decoration: underline;
+    }
+  }
+
+  &__top {
+    width: 80%;
+    font-weight: lighter;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    &--link {
+      margin: 20px 0;
+      .col-4 {
+        img {
+          max-width: 200px;
+        }
+        a {
+          color: #000;
+          font-weight: lighter;
+        }
+        h2 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__rightcontainer {
+    width: 80%;
+    h1 {
+      font-size: 2rem;
+    }
+    &--grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 1rem;
+    }
+
+    &--card {
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-weight: lighter;
+        height: 30px;
+      }
+      img {
+        max-width: 200px;
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+  button {
+    margin: 5px 0;
+    width: 120px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: $accent-color;
+    color: #fff;
+  }
+  &__detail {
+    width: 80%;
+    &--card {
+      display: flex;
+      .discription {
+        padding: 15px;
+        h2 {
+          font-size: 2rem;
+        }
+        button {
+          width: 200px;
+        }
+      }
+    }
+  }
+}

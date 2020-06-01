@@ -1,0 +1,36 @@
+@import "../../index.scss";
+
+.news {
+  margin: 50px 0;
+  h1 {
+    font-weight: lighter;
+    font-size: 3rem;
+    text-align: center;
+    color: $accent-color;
+    background: -webkit-linear-gradient(
+      0deg,
+      #acb6e5,
+      #86fde8
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+  }
+
+  &__articles {
+    width: 70%;
+    margin: 0 auto;
+    &--post {
+      display: flex;
+      place-items: center;
+      & > div {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  p {
+    font-size: .8rem;
+  }
+}
