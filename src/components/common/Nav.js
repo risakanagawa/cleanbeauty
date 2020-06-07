@@ -8,9 +8,7 @@ import "./common.scss";
 
 import { addCart } from "../../store/actions";
 
-const Nav = ({ count, addCart }) => {
-  console.log(addCart);
-  console.log("nav", count);
+const Nav = ({ count }) => {
   const [active, toggleActive] = useState(false);
   const clickedMenu = () => toggleActive(!active);
   return (
@@ -46,22 +44,43 @@ const Nav = ({ count, addCart }) => {
             </Link>
 
             <li className="navigation__product">
-              <label htmlFor="label1">PRODUCTS</label>
+              <label htmlFor="label1">
+                
+                <Link to="/shop">
+                  <li> PRODUCTS</li>
+                  </Link>
+                </label>
               <input type="checkbox" id="label1" />
               <ul className="navigation__product--link">
-                <li>MAKEUP</li>
-                <li>SKIN CARE</li>
-                <li>TOOLS</li>
-                <li>ALL</li>
+               
+                  <Link to="/shop/makeup">
+                  <li> MAKEUP</li>
+                  </Link>
+                  <Link to="/shop/skincare">
+                  <li> SKIN CARE</li>
+                  </Link>
+                  <Link to="/shop/bodycare">
+                  <li> BODY CARE</li>
+                  </Link>
+                  <Link to="/shop/others">
+                  <li> OTHERS</li>
+                  </Link>
+                  <Link to="/shop/shopall">
+                  <li> ALL</li>
+                  </Link>
+
               </ul>
             </li>
             <Link to="/findus" onClick={clickedMenu}>
               <li>FIND US</li>
             </Link>
-            <li onClick={() => addCart()}>
-              <FontAwesomeIcon icon={["fas", "shopping-bag"]} size="1x" />(
-              {count})
-            </li>
+
+            <Link to="/shoppingcart">
+              <li>
+                <FontAwesomeIcon icon={["fas", "shopping-bag"]} size="1x" />(
+                {count})
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
@@ -70,14 +89,7 @@ const Nav = ({ count, addCart }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.shoppingCart);
   return { count: state.shoppingCart.count };
 };
 
-function mapDispatchToProps(dispatch) {
-  return {
-    addCart: () => dispatch(addCart()),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default connect(mapStateToProps)(Nav);

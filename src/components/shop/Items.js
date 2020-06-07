@@ -24,7 +24,7 @@ const Items = ({ products }) => {
             <h2> {item.name}</h2>
             <span>${item.price}</span>
             <button>
-              <Link to={`${url}/${item.id}`} >Link</Link>
+              <Link to={`${url}/${item.id}`} >Detail</Link>
             </button>
           </div>
         );

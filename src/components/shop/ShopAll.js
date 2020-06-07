@@ -6,7 +6,6 @@ import "./shop.scss";
 const ShopAll = () => {
   return (
     <div className="products">
-
       <div className="products__container">
         <NavProduct />
         <RightContainer />
