@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import "../../material.scss";
 
 .products {
   &__container {
@@ -7,23 +7,54 @@
     width: 80vw;
     margin: 0 auto;
     padding: 50px;
-  }
-  &__nav {
-    align-self: flex-start;
-    flex-grow: 3;
-    margin-top: 2rem;
-    ul {
-      list-style-type: none;
-    }
-    li {
-      padding: 10px;
-    }
-    .last-li {
-      margin-top: 20px;
+    &--nav {
+      align-self: flex-start;
+      flex-grow: 3;
+      margin-top: 2rem;
+      ul {
+        list-style-type: none;
+      }
+      li {
+        padding: 10px;
+      }
+      .last-li {
+        margin-top: 20px;
+      }
+
+      a.active {
+        font-weight: bold;
+        text-decoration: underline;
+      }
     }
 
-    a.active {
-      text-decoration: underline;
+    &--right {
+      width: 80%;
+      h1 {
+        font-size: 2rem;
+      }
+      .right__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+        grid-gap: 1rem;
+        &--card {
+          padding: 5px;
+          display: flex;
+          flex-direction: column;
+          h2 {
+            font-weight: lighter;
+            height: 30px;
+          }
+          img {
+            max-width: 200px;
+          }
+          button {
+            cursor: pointer;
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -52,35 +83,8 @@
     }
   }
 
-  &__rightcontainer {
-    width: 80%;
-    h1 {
-      font-size: 2rem;
-    }
-    &--grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
-      grid-gap: 1rem;
-    }
-
-    &--card {
-      padding: 5px;
-      display: flex;
-      flex-direction: column;
-      h2 {
-        font-weight: lighter;
-        height: 30px;
-      }
-      img {
-        max-width: 200px;
-      }
-
-      a {
-        color: #fff;
-      }
-    }
-  }
   button {
+    cursor: pointer;
     margin: 5px 0;
     width: 120px;
     padding: 8px 15px;
@@ -88,6 +92,7 @@
     background: $accent-color;
     color: #fff;
   }
+
   &__detail {
     width: 80%;
     &--card {
@@ -142,4 +147,75 @@
 
 .error {
   color: red;
+}
+@include tablet {
+  .products {
+    &__container {
+      width: 90vw;
+      padding: 0;
+      flex-direction: column;
+      &--nav {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0;
+        }
+        .last-li {
+          margin-top: 0;
+        }
+      }
+      &--right {
+        width: 90%;
+        .right__grid {
+          grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+          &--card {
+            height: 300px;
+            h2 {
+              height: 100px;
+            }
+            img {
+              max-width: 150px;
+            }
+          }
+        }
+      }
+    }
+
+    &__top {
+      width: 90%;
+      &--header{
+        img {
+          max-width: 300px;
+        }
+        &-text {
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    &__detail {
+      width: 90%;
+      &--card {
+        flex-direction: column;
+        .media {
+          img {
+            max-width: 250px;
+          }
+        }
+        .discription {
+          padding: 20px 5px;
+          p {
+            font-size: 1rem;
+          }
+          &__makeup{
+            flex-wrap: wrap;
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+
+  }
 }

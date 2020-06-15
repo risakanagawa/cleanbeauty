@@ -11,15 +11,14 @@ const Items = ({ products }) => {
     categoryId === "shopall"
       ? products
       : products.filter((product) => product.category === categoryId);
-  console.log(items, "in Item");
   return (
-    <div className="products__rightcontainer">
+    <div className="products__container--right">
       <h1>{categoryId === "shop" ? "SHOP ALL" : categoryId.toUpperCase()}</h1>
-      <div className="products__rightcontainer--flex">
-      <div className="products__rightcontainer--grid">
+      <div className="right__flex">
+      <div className="right__grid">
       {items.map((item, idx) => {
         return (
-          <div className="products__rightcontainer--card" key={idx}>
+          <div className="right__grid--card" key={idx}>
             <img src={item.img} alt={item.name} />
             <h2> {item.name}</h2>
             <span>${item.price}</span>

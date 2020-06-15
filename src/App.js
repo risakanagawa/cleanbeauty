@@ -13,6 +13,7 @@ import FindUs from "./components/findus/FindUs";
 import News from "./components/news/News";
 import ShopAll from "./components/shop/ShopAll";
 import InCart from "./components/shoppingCart/InCart"
+import ErrorPage from "./ErrorPage";
 
 library.add(fab, fas);
 
@@ -31,6 +32,8 @@ function App() {
             <Route exact path="/shoppingcart" component={InCart} />
 
             <Route exact path="/" component={Main} />
+            <Route  component={ErrorPage} />
+
           </Switch>
 
           <Footer />

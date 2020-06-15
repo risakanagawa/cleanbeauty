@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./common.scss";
 
-import { addCart } from "../../store/actions";
-
 const Nav = ({ count }) => {
   const [active, toggleActive] = useState(false);
   const clickedMenu = () => toggleActive(!active);
@@ -45,31 +43,28 @@ const Nav = ({ count }) => {
 
             <li className="navigation__product">
               <label htmlFor="label1">
-                
-                <Link to="/shop">
-                  <li> PRODUCTS</li>
-                  </Link>
-                </label>
+                <Link to="/shop"  onClick={clickedMenu}>
+                  <span> PRODUCTS</span>
+                </Link>
+              </label>
               <input type="checkbox" id="label1" />
-              <ul className="navigation__product--link">
-               
-                  <Link to="/shop/makeup">
-                  <li> MAKEUP</li>
-                  </Link>
-                  <Link to="/shop/skincare">
-                  <li> SKIN CARE</li>
-                  </Link>
-                  <Link to="/shop/bodycare">
-                  <li> BODY CARE</li>
-                  </Link>
-                  <Link to="/shop/others">
-                  <li> OTHERS</li>
-                  </Link>
-                  <Link to="/shop/shopall">
-                  <li> ALL</li>
-                  </Link>
-
-              </ul>
+              <div className="navigation__product--link">
+                <Link to="/shop/makeup"  onClick={clickedMenu}>
+                  <span> MAKEUP</span>
+                </Link>
+                <Link to="/shop/skincare"  onClick={clickedMenu}>
+                  <span> SKIN CARE</span>
+                </Link>
+                <Link to="/shop/bodycare"  onClick={clickedMenu}>
+                  <span> BODY CARE</span>
+                </Link>
+                <Link to="/shop/others"  onClick={clickedMenu}>
+                  <span> OTHERS</span>
+                </Link>
+                <Link to="/shop/shopall"  onClick={clickedMenu}>
+                  <span> ALL</span>
+                </Link>
+              </div>
             </li>
             <Link to="/findus" onClick={clickedMenu}>
               <li>FIND US</li>

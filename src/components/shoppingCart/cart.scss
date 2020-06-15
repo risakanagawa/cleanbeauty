@@ -1,9 +1,10 @@
-@import "../../index.scss";
+@import "../../material.scss";
 
 .cart {
   display: flex;
   flex-direction: column;
   width: 80%;
+  height: 50vh;
   margin: 50px auto;
   ul {
     display: flex;

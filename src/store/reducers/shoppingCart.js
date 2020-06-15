@@ -69,7 +69,7 @@ const shoppingCart = (state = initialState, action) => {
     case "REMOVE_FROM_CART":
       const newTotal =
         state.total - action.payload.price * action.payload.quantity;
-
+      console.log(action.payload)
       if(action.payload.selectedColor) {
         console.log("inside", action.payload )
         return {
@@ -78,7 +78,7 @@ const shoppingCart = (state = initialState, action) => {
           InShoppingCart: state.InShoppingCart.filter(
             (product) => {
               console.log(product)
-              return product.selectedColor.id !== action.payload.selectedColor.id}
+              return !product.selectedColor || product.selectedColor.style !== action.payload.selectedColor.style}
           ),
         };
       }

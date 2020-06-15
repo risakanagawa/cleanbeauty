@@ -1,5 +1,5 @@
 
-@import "../../index.scss";
+@import "../../material.scss";
 .findus {
   display: flex;
   justify-content: space-around;
@@ -31,7 +31,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@include tablet {
   .findus {
     height: 80vh;
     flex-direction: column-reverse;

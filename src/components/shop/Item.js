@@ -28,7 +28,7 @@ const Item = ({ match, products, addCart }) => {
   return (
     <div className="products__detail">
       <p>
-        <a href={`/shop/${currentCategory}`}>{currentCategory} </a>> {name}
+        <a href={`/shop/${currentCategory}`}>{currentCategory} </a> {"<"} {name}
       </p>
       {
         <div className="products__detail--card">

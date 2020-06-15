@@ -1,3 +1,4 @@
+@import "../../material.scss";
 .head-img {
   background: url("../../img/header-img.jpg") no-repeat center;
   height: 500px;
@@ -97,7 +98,7 @@
     }
   }
 }
-@media screen and (max-width: 768px) {
+@include tablet {
   .head-img {
     height: 50vh;
   }
@@ -148,7 +149,7 @@
     width: auto;
     height: 300px;
   }
-  @media screen and (max-width: 768px) {
+  @include tablet {
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }

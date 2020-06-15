@@ -7,15 +7,15 @@ const NavProduct = () => {
   const param = pathname.slice(6);
 
   const routes = [
+    { route: "shopall", text: "Shop All" },
     { route: "makeup", text: "MAKEUP" },
     { route: "skincare", text: "SKIN CARE" },
     { route: "bodycare", text: "BODY CARE" },
     { route: "others", text: "OTHERS" },
-    { route: "shopall", text: "Shop All" },
   ];
 
   return (
-    <div className="products__nav">
+    <div className="products__container--nav">
       <ul>
         {routes.map(({ route, text }) => {
           return (

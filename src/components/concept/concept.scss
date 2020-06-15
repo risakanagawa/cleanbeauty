@@ -1,3 +1,5 @@
+@import "../../material.scss";
+
 .concept-page {
   display: flex;
   flex-direction: column;
@@ -40,7 +42,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include tablet {
     .concept-box {
       flex-direction: column;
       height: auto;

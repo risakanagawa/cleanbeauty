@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,700&display=swap');
+@import "./material.scss";
+
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -9,16 +11,13 @@ h1,h2,h3 {
     font-weight: 500;
 }
 
-$basic-fontcolor:#565656;
-$accent-color : #3caea3;
-$accent-color-transparent:  #3caea39b;
-
 body {
     margin: 0;
 }
 
 a {
     text-decoration: none;
+    color: #000;
     &:visited {
       color: transparent;
     }
@@ -29,20 +28,35 @@ button {
     border: none;
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
 
 .fab {
     height: 50px;
     width: 50px;
 }
+
+.errorpage {
+    max-width: 500px;
+    margin: 0 auto;
+    height: 50vh;
+    h1 {
+        font-weight: lighter;
+        font-size: 4rem;
+        text-align: center;
+        color: $accent-color;
+        background: -webkit-linear-gradient(
+          0deg,
+          #acb6e5,
+          #86fde8
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+      }
+      h2, a {
+        text-align: center;
+          font-size: 1.5rem;
+      }
+      a {
+          text-decoration: underline;
+      }
+}
+

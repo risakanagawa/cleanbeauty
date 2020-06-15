@@ -1,5 +1,5 @@
 
-import { ADD_QUANTITY, ADD_TO_CART, REMOVE_FROM_CART, SUB_QUANTITY, TOGGLE_COLOR } from "./actionTypes";
+import { ADD_QUANTITY, ADD_TO_CART, REMOVE_FROM_CART, SUB_QUANTITY } from "./actionTypes";
 
 export const addCart = (product) => {
   return {

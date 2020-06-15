@@ -8,14 +8,13 @@ const InCart = ({ shoppingCart, addQuantity, subQuantity, removeFromCart }) => {
   const { count, total, InShoppingCart } = shoppingCart;
   console.log(total);
 
-  //   const text = count === 0 ? <p>Nothing in your shopping cart.</p> : basket;
 
   const basket = () => {
     return InShoppingCart.map((product) => {
       const { id, name, price, quantity } = product;
       console.log(product)
       return (
-        <div className="">
+        <div className="cart__products--row" key={id} >
           <ul>
             <li>
               {name}
@@ -52,7 +51,7 @@ const InCart = ({ shoppingCart, addQuantity, subQuantity, removeFromCart }) => {
           <li>TOTAL</li>
         </ul>
       </div>
-      <div className="cart__products">{basket()}</div>
+      <div className="cart__products">{count === 0 ? <p>Nothing in your shopping cart.</p> : basket()}</div>
       <div className="cart__total">
         <p>TOTAL ${total}</p>
       </div>
