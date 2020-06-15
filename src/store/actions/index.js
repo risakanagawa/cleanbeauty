@@ -9,7 +9,6 @@ export const addCart = (product) => {
 };
 
 export const addQuantity = (product) => {
-  console.log("inside!", product)
   return {
     type: ADD_QUANTITY,
     product
@@ -17,7 +16,6 @@ export const addQuantity = (product) => {
 };
 
 export const subQuantity = (product) => {
-  console.log("inside!", product)
   return {
     type: SUB_QUANTITY,
     product

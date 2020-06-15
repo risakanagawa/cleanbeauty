@@ -3,7 +3,6 @@ import { useParams, Link, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
 
 const Items = ({ products }) => {
-  console.log(products);
   let { categoryId } = useParams();
   const { url } = useRouteMatch();
 
@@ -35,7 +34,6 @@ const Items = ({ products }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return { products: state.products };
 };
 

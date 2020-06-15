@@ -15,9 +15,7 @@ const Item = ({ match, products, addCart }) => {
   const [errorMsg, toggleMsg] = useState(false);
 
   const isSelected = () => {
-    console.log(!currentColor && category === "makeup");
     if (!currentColor && category === "makeup") {
-      console.log("inside true");
       toggleMsg(true);
     } else {
       toggleMsg(false);
@@ -84,7 +82,6 @@ const Item = ({ match, products, addCart }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return { products: state.products };
 };
 function mapDispatchToProps(dispatch) {

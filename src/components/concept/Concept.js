@@ -24,7 +24,6 @@ export default function Concept() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [shouldFadeIn1]);
-  console.log(fadeInStyle1);
 
   return (
     <div className="concept-page">
