@@ -6,13 +6,11 @@ import "./cart.scss";
 
 const InCart = ({ shoppingCart, addQuantity, subQuantity, removeFromCart }) => {
   const { count, total, InShoppingCart } = shoppingCart;
-  console.log(total);
 
 
   const basket = () => {
     return InShoppingCart.map((product) => {
       const { id, name, price, quantity } = product;
-      console.log(product)
       return (
         <div className="cart__products--row" key={id} >
           <ul>
@@ -60,7 +58,6 @@ const InCart = ({ shoppingCart, addQuantity, subQuantity, removeFromCart }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return { shoppingCart: state.shoppingCart };
 };
 
